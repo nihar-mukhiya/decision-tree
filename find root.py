@@ -5,11 +5,14 @@ def entropy():
     return  -class_yes * log2(class_yes) - class_no * log2(class_no)
 
 def for_outlook():
-    p_sunny = inputter.select('outlook').where('outlook', 'sunny').num_rows
-    p_sunny = p_sunny / a
+    p_sunny = inputter.where('outlook', 'sunny').num_rows
+    #p_sunny = p_sunny / a
+    print(p_sunny)
     p_sunny_yes = inputter.where('outlook', 'sunny')
-    p_sunny_yes = p_sunny_yes.where('play tennis', 'yes')
-    #p_sunny_yes = p_sunny_yes / p_sunny
+    print(p_sunny_yes)
+    p_sunny_yes = p_sunny_yes.where('play tennis', 'yes').num_rows
+    print(p_sunny_yes)
+    p_sunny_yes = p_sunny_yes / p_sunny
     print(p_sunny_yes)
 
     p_overcast = inputter.select('outlook').where('outlook', 'sunny').num_rows
