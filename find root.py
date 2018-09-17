@@ -7,7 +7,7 @@ def entropy():
 def for_outlook():
     p_sunny = inputter.select('outlook').where('outlook', 'sunny').num_rows
     p_sunny = p_sunny / a
-    p_sunny_yes = inputter.where('outlook', 'sunny').where()
+    p_sunny_yes = inputter.where('outlook', 'sunny')
     p_sunny_yes = p_sunny_yes.where('play tennis', 'yes')
     #p_sunny_yes = p_sunny_yes / p_sunny
     print(p_sunny_yes)
