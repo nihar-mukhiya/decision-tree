@@ -5,6 +5,13 @@ from pandas import *
 import numpy as np
 from math import log2
 
+def ent(list):
+    entropy, g = 0, 0
+    for z in list:
+        entropy += - list[g] * log2(list[g])
+        print(entropy)
+    return entropy
+
 root = tk.Tk()
 
 file_path = filedialog.askopenfilename()
@@ -29,12 +36,10 @@ for y in range(0, len(uniq)):
     clas1 = clas1 / c
     p_class.append(clas1)
 print(p_class)
+entropy_val = ent(p_class)
+print(entropy_val)
 
-def ent(list):
-    entropy, g = 0, 0
-    for z in list:
-        entropy += - list[g] * log2(list[g])
-    return entropy
+
 
 
 
