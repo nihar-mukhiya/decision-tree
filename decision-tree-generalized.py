@@ -2,7 +2,8 @@
 # Date: 28/09/2018
 # Last update: 30/09/2018
 # Description: A python implementation of finding root procedure of decision tree.
-#              User gives input from csv file and has choice to make a particular column of csv 'class' of the fiinding root procedure in decision tree.
+#              User gives input from csv file and has choice to make a particular column of csv as
+#              'class' of the finding root procedure in decision tree.
 #              User is displayed the column name chosen as the root of decision tree.
 import tkinter as tk
 from tkinter import filedialog
@@ -46,15 +47,14 @@ for y in range(0, len(uniq)):
     p_class.append(clas1)
 
 entropy_val = ent(p_class)
-print("Entropy for your class is: " +str(entropy_val))
+print("\nEntropy for your class is: " +str(entropy_val)+ "\n")
 temp = copy.deepcopy(list(column_names))
 temp.remove(temp[clas - 1])
-#print(temp)
 prob_of_column = {}
 prob_of_values_in_column = {}
 info = {}
 temp2 = []
-for z in range(0, len(temp)):           #len(temp)
+for z in range(0, len(temp)):
     uniq1 = e[temp[z]].unique()
 
     clas3 = []
@@ -90,10 +90,10 @@ for z in range(0, len(temp)):           #len(temp)
     sum1 = sum(templist)
     sum1 = entropy_val - sum1
     info[temp[z]] = sum1
-
+print("Values of info gain of all the columns are: \n")
 print(info)
 root = max(info, key=info.get)
-print("Root of the decision tree is: " +str(root))
+print("\nRoot of the decision tree is: " +str(root))
 
 
 
