@@ -1,3 +1,9 @@
+# Author: Nihar Mukhiya
+# Date: 28/09/2018
+# Last update: 30/09/2018
+# Description: A python implementation of finding root procedure of decision tree.
+#              User gives input from csv file and has choice to make a particular column of csv 'class' of the fiinding root procedure in decision tree.
+#              User is displayed the column name chosen as the root of decision tree.
 import tkinter as tk
 from tkinter import filedialog
 from datascience import *
